@@ -4,12 +4,12 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import java.util.concurrent.Flow
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface UserDao {
     @Query("SELECT * FROM ${User.Users_Table_Name}")
-    fun getAllPosts(): Flow<List<User>>
+    fun getAllUsers(): Flow<List<User>>
 
     @Query("SELECT * FROM users WHERE id LIKE :id")
     fun findByID(id: String): User

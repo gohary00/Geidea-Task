@@ -3,8 +3,9 @@ package com.example.geideatask.feature.users.data.api
 import com.example.geideatask.feature.users.data.models.remote.UsersResponse
 import retrofit2.Response
 import retrofit2.http.GET
+import retrofit2.http.Query
 
 interface UsersApiService {
-    @GET("users?per_page=20")
-    suspend fun getUsers(): Response<UsersResponse>
+    @GET("users")
+    suspend fun getUsers(@Query("per_page") page: Int = 20): Response<UsersResponse>
 }

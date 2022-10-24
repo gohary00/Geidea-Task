@@ -20,13 +20,13 @@ android {
 
         buildTypes {
             debug {
-                buildConfigField "String", "BASE_URL", "\"https://reqres.in/api/users?per_page=20\""
+                buildConfigField "String", "BASE_URL", "\"https://reqres.in/api/\""
                 resValue "string", "app_name", "Geidea Debug"
             }
 
             release {
                 debuggable false
-                buildConfigField "String", "BASE_URL", "\"https://reqres.in/api/users?per_page=20\""
+                buildConfigField "String", "BASE_URL", "\"https://reqres.in/api/\""
 
                 resValue "string", "app_name", "Geidea"
                 minifyEnabled true
