@@ -1,6 +1,6 @@
 package com.example.geideatask.hilt
 
-import com.example.geideatask.feature.usersList.data.api.UsersApiService
+import com.example.geideatask.feature.users.data.api.UsersApiService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

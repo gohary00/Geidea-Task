@@ -1,4 +1,4 @@
-package com.example.geideatask.feature.usersList.data.models
+package com.example.geideatask.feature.users.data.models
 
 data class User(
     val avatar: String,
