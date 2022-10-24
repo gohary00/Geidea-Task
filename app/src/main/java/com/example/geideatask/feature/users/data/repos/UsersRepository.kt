@@ -1,7 +1,7 @@
 package com.example.geideatask.feature.users.data.repos
 
 import com.example.geideatask.feature.users.data.api.UsersApiService
-import com.example.geideatask.feature.users.data.models.UsersResponse
+import com.example.geideatask.feature.users.data.models.remote.UsersResponse
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import javax.inject.Inject

@@ -1,6 +1,6 @@
 package com.example.geideatask.feature.users.data.api
 
-import com.example.geideatask.feature.users.data.models.UsersResponse
+import com.example.geideatask.feature.users.data.models.remote.UsersResponse
 import retrofit2.http.GET
 
 interface UsersApiService {
