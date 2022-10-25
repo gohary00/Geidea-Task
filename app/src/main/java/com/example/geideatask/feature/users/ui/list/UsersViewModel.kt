@@ -7,9 +7,11 @@ import androidx.lifecycle.viewModelScope
 import com.example.geideatask.feature.users.data.database.User
 import com.example.geideatask.feature.users.data.models.shared.State
 import com.example.geideatask.feature.users.data.repos.UsersRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+@HiltViewModel
 class UsersViewModel @Inject constructor(private val usersRepository: UsersRepository) :
     ViewModel() {
 

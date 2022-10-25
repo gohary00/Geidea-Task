@@ -35,7 +35,7 @@ class UsersFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setupUsersRecyclerView()
+       // setupUsersRecyclerView()
         setupObservers()
     }
 

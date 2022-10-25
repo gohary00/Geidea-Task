@@ -10,7 +10,9 @@ import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject
+import javax.inject.Singleton
 
+@Singleton
 class UsersRepository @Inject constructor(
     private val usersApiService: UsersApiService,
     private val userDao: UserDao

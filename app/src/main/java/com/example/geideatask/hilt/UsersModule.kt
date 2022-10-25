@@ -11,7 +11,6 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 class UsersModule {
-
     @Singleton
     @Provides
     fun provideUsersApiService(retrofit: Retrofit): UsersApiService =

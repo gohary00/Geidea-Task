@@ -13,9 +13,12 @@ buildscript {
     ext.room_version = "2.4.3"
     repositories {
         mavenCentral()
+        google()
+        jcenter()
     }
     dependencies {
-        classpath 'com.google.dagger:hilt-android-gradle-plugin:2.44'
+        classpath 'com.android.tools.build:gradle:7.3.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
 
@@ -25,4 +28,9 @@ plugins {
     id 'org.jetbrains.kotlin.android' version '1.7.10' apply false
     id 'com.google.dagger.hilt.android' version '2.44' apply false
 }
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
 
