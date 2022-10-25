@@ -32,12 +32,11 @@ class UsersListAdapter : ListAdapter<User, UsersListAdapter.DevicesViewHolder>(D
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(user: User) = with(binding) {
             tvUserId.text = user.id.toString()
-            tvUserId.text = binding.root.context.getString(
+            tvUserName.text = binding.root.context.getString(
                 R.string.user_name_place_holder,
                 user.first_name,
                 user.last_name
             )
-
         }
     }
 }

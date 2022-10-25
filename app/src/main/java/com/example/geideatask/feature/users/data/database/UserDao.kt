@@ -15,6 +15,6 @@ interface UserDao {
     fun findByID(id: String): User
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertAll(vararg users: List<User>)
+    fun insertAll( users: List<User>)
 
 }
