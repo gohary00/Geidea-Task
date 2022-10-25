@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.example.geideatask.databinding.FragmentUsersBinding
 import com.example.geideatask.feature.users.data.models.shared.State
 import dagger.hilt.android.AndroidEntryPoint
@@ -18,11 +19,10 @@ class UsersFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val usersListAdapter by lazy {
-        UsersListAdapter()
+        UsersListAdapter(::onUserClicked)
     }
 
     private val usersViewModel: UsersViewModel by viewModels()
-
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -45,6 +45,12 @@ class UsersFragment : Fragment() {
         }
     }
 
+    private fun onUserClicked(userId: Int) {
+        findNavController().navigate(
+            UsersFragmentDirections.actionUsersFragmentToUserDetailsFragment(userId)
+        )
+    }
+
     private fun setupObservers() {
         usersViewModel.usersLiveData.observe(viewLifecycleOwner) { state ->
             when (state) {
@@ -60,8 +66,11 @@ class UsersFragment : Fragment() {
                     Toast.makeText(requireContext(), state.message, Toast.LENGTH_LONG).show()
                 }
             }
-
         }
+    }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

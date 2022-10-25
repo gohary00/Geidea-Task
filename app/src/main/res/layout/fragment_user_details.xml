@@ -1,6 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/ivUserAvatar"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvUserId"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:textAppearance="@android:style/TextAppearance.Material.Body2"
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivUserAvatar"
+        tools:text="Test Id" />
+
+    <TextView
+        android:id="@+id/tvUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:textAppearance="@android:style/TextAppearance.Material.Body2"
+        android:textColor="@android:color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvUserId"
+        tools:text="Test name" />
+
+    <TextView
+        android:id="@+id/tvUserEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:textAppearance="@android:style/TextAppearance.Material.Body2"
+        android:textColor="@android:color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvUserName"
+        tools:text="Test Email" />
+
+    <ProgressBar
+        android:id="@+id/pbUserDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

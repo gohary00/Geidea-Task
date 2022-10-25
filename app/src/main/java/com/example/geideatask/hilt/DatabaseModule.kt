@@ -1,4 +1,4 @@
-package com.example.geideatask.hilt.roomModule
+package com.example.geideatask.hilt
 
 import android.content.Context
 import androidx.room.Room

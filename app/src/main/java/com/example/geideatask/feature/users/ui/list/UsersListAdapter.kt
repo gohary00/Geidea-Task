@@ -9,7 +9,8 @@ import com.example.geideatask.R
 import com.example.geideatask.databinding.ItemUserBinding
 import com.example.geideatask.feature.users.data.database.User
 
-class UsersListAdapter : ListAdapter<User, UsersListAdapter.DevicesViewHolder>(DiffUtilCallback()) {
+class UsersListAdapter(private val onUserClicked: (Int) -> Unit) :
+    ListAdapter<User, UsersListAdapter.DevicesViewHolder>(DiffUtilCallback()) {
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int,
@@ -27,7 +28,7 @@ class UsersListAdapter : ListAdapter<User, UsersListAdapter.DevicesViewHolder>(D
         holder.bind(getItem(position))
     }
 
-    class DevicesViewHolder(
+    inner class DevicesViewHolder(
         private val binding: ItemUserBinding,
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(user: User) = with(binding) {
@@ -37,6 +38,10 @@ class UsersListAdapter : ListAdapter<User, UsersListAdapter.DevicesViewHolder>(D
                 user.first_name,
                 user.last_name
             )
+
+            root.setOnClickListener {
+                onUserClicked.invoke(user.id)
+            }
         }
     }
 }

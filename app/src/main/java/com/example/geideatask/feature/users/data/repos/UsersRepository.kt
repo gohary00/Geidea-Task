@@ -46,5 +46,19 @@ class UsersRepository @Inject constructor(
 
     private fun saveRemoteUser(users: List<User>) = userDao.insertAll(users)
 
+    fun getUserDetails(userId: Int) = flow {
+        emit(State.loading())
+        try {
+            val apiResponse = usersApiService.getUserDetails(userId)
+            if (apiResponse.isSuccessful && apiResponse.body() != null) {
+                emit(State.success(apiResponse.body()?.data!!))
+            } else {
+                emit(State.error(apiResponse.message()))
+            }
+        } catch (e: Exception) {
+            emit(State.error("Network error! Can't get user details"))
+            e.printStackTrace()
+        }
+    }.flowOn(Dispatchers.IO)
 
 }
